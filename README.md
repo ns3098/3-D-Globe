@@ -1,4 +1,5 @@
-# 3-D-Globe
+
+# 3-D Globe
 
 ### Installing (Front-End)
 
