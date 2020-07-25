@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:description" content="COVID-19 3D Visualization." />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta
+         name="monetization"
+         content="$coil.xrptipbot.com/701298d5-481d-40ff-9945-336671ab2c42"
+         />
+      <link
+         href="https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap"
+         rel="stylesheet"
+         />
+      <meta property="og:image" content="https://i.imgur.com/1AFEXhs.png" />
+      <title>3-D GLOBE</title>
+      <link rel="stylesheet" href="./styles/main.css" />
+      <link rel="stylesheet" href="./styles/style.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   </head>
+   <body>
+      <div id="globeViz"></div>
+      <div class="top-info-container">
+      <div class="container" id="modal-opened" style=" transform: translate(-61.5%, -10%) translate(395.5px, 120px);">
+         <div class="modal">
+            <div class="details">
+               <h1 id="card_title" class="card-title"></h1>
+            </div>
+            <div class="scrollable">
+            </div>
+            <a onclick="myFunction()" class="link-2"></a>
+         </div>
+      </div>
+      <div class="top-info-container" >
+      <div class="container" id="modal1-opened" style=" transform: translate(10%, -10%) translate(395.5px, 120px);">
+         <div class="modal">
+            <div class="details">
+               <h1 id="card_title1" class="card-title1"></h1>
+            </div>
+            <div class="scrollable1" id="fuck">
+            </div>
+            <a onclick="myFunction1()" class="link-1"></a>
+         </div>
+      </div>
+      <div class="title">3-D GLOBE</div>
+      <div class="title-desc">
+         Loading...
+      </div>
+      <script>
+         function myFunction() {
+           var x = document.getElementById("modal-opened");
+           var y = document.getElementById("modal1-opened");
+           if (x.style.display === "none") {
+         	x.style.display = "block";
+           } else {
+         	x.style.display = "none";
+         	y.style.display = "none";
+           }
+         }
+      </script>
+      <script>
+         function myFunction1() {
+
+           var y = document.getElementById("modal1-opened");
+           if (y.style.display === "block") {
+         	y.style.display = "none";
+           }
+         }
+      </script>
+      <script src="./app.js"></script>
+   </body>
+</html>
