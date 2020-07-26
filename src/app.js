@@ -60,6 +60,7 @@ function init() {
 
 
             document.getElementById('modal-opened').style.display = "block";
+            document.getElementById('modal1-opened').style.display = "none";
             document.querySelector(".scrollable").innerHTML = '';
             document.querySelector(".scrollable").innerHTML += (polygon.bioData.bioStats);
 
