@@ -23,7 +23,7 @@ const getVal = (feat) => { // Coloring each country according to ratio of (Numbe
 };
 
 let world;
-
+document.getElementById('modal-opened').style.display = "block";
 const flagEndpoint = 'https://corona.lmao.ninja/assets/img/flags'; // Flag endpoint
 
 init();
