@@ -3,7 +3,7 @@ const csv = require('csvtojson');
 
 class BioData {
     constructor() {
-        this.timeSeriesURL =
+        this.BioDataURL =
             'https://raw.githubusercontent.com/ns3098/python-packages/master';
         this.countryRenameMapper = { // Renaming the country if required
             "United States": 'United States of America',
@@ -76,7 +76,7 @@ class BioData {
 
     getDataFromServer() {
         return this.parseCSV(
-            `${this.timeSeriesURL}/bio.csv`
+            `${this.BioDataURL}/bio.csv`
         );
     }
 

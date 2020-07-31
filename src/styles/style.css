@@ -23,7 +23,6 @@ a:link {
 }
 .container {
   position: absolute;
-  margin-left:0;
   display: none;
   justify-content: center;
   align-items: center;
