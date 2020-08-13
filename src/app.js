@@ -18,9 +18,6 @@ const globeContainer = document.getElementById('globeViz');
 
 const colorScale = d3.scaleSequentialPow(d3.interpolateYlOrRd).exponent(1 / 4);
 
-const getVal = (feat) => { // Coloring each country according to ratio of (Number of companies / Total Population)
-    return feat.bioData.Total / feat.properties.POP_EST;
-};
 
 let world;
 
@@ -36,8 +33,7 @@ function init() {
         .polygonAltitude(0.06)
 		
 		
-        .polygonCapColor((feat) => colorScale(getVal(feat)))  // dynamically colour the countries
-		//.polygonCapColor(() => '#0EBE9F')   -> Uncomment this line and comment out the above line if you want to keep the color of countries static.
+		.polygonCapColor(() => '#0EBE9F')   // Controls the colour of the countries. 
 		
 		
 		
@@ -87,15 +83,7 @@ function init() {
             world
             .polygonAltitude((d) => (d === hoverD ? 0.12 : 0.06))
             .polygonCapColor((d) =>
-                d === hoverD ? 'steelblue' : colorScale(getVal(d)) // Use this only when you are using dynamic colour for countries.
-				
-				/* 
-				
-				d === hoverD ? 'steelblue' : colorScale(getVal(d))  
-				
-				Use this for static colour and replace 'colorScale(getVal(d))' with the colour code you are using in 'polygonCapColor' function above.
-																																								
-				*/
+                d === hoverD ? '#104A40' : '#0EBE9F' // Controls the colour of the country when hovered.
             )
         )
         .polygonsTransitionDuration(200); 
@@ -147,9 +135,6 @@ function updatePolygonsData() {
         }
     }
 
-	// Comment below 2 lines if you don't want to keep the colour of the countries dynamic.
-    const maxVal = Math.max(...featureCollection.map(getVal));
-    colorScale.domain([0, maxVal]);
 	
 	
     world.polygonsData(featureCollection); // Updating data
