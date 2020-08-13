@@ -79,4 +79,4 @@ export const BIODATA_API =
  - To change the background image of globe, navigate to src folder and open constant.js file and replace the value of the variable **BACKGROUND_IMAGE_URL** with the url of you image. It might happen that image you just used will not be rendered by the globe, in such case try another image.
  - Colour of the globe is also managed inside constant.js file with the help of **GLOBE_IMAGE_URL** variable. Repeat the same steps as above mentioned.
  - For other changes like changing the colour of countries, colour of the border between the two countries, Side colour of the countries, hover colour of the countries. Please check the **app.js** file and read the comments carefully.
-
+- To control the properties of modal box(which shows companies name) navigate to src/styles and open style.css file. There you will find two property with the name **'modal'** and **'modal1'** . You can change the required attributes listed there like background(controls the background colour of box), color(controls colour of text inside the box), top(X% means box will be located X% far from the top), left(X% means box will be located X% far from the left).
