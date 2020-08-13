@@ -34,9 +34,22 @@ function init() {
         .backgroundImageUrl(BACKGROUND_IMAGE_URL)
         .showGraticules(false)
         .polygonAltitude(0.06)
-        .polygonCapColor((feat) => colorScale(getVal(feat)))
-        .polygonSideColor(() => 'rgba(0, 100, 0, 0.05)')
-        .polygonStrokeColor(() => '#111')
+		
+		
+        .polygonCapColor((feat) => colorScale(getVal(feat)))  // dynamically colour the countries
+		//.polygonCapColor(() => '#0EBE9F')   -> Uncomment this line and comment out the above line if you want to keep the color of countries static.
+		
+		
+		
+        .polygonSideColor(() => 'rgba(0, 100, 0, 0.05)') // This controls the side colour of countires. Change this rgba value with your 
+														// hex code or rgb value and then verify the changes made.
+														
+		
+		
+        .polygonStrokeColor(() => '#111')  // This controls the colour of border between two countries. Make some colour changes in it and see the globe.
+		
+		
+		
         .polygonLabel(
             ({
                 properties: d,
@@ -67,16 +80,27 @@ function init() {
             document.getElementById("card_title").innerHTML = polygon.properties.NAME;
 
         })
+		
+		
+		// This property controls the functionality when any country is hovered.
         .onPolygonHover((hoverD) =>
             world
             .polygonAltitude((d) => (d === hoverD ? 0.12 : 0.06))
             .polygonCapColor((d) =>
-                d === hoverD ? 'steelblue' : colorScale(getVal(d))
+                d === hoverD ? 'steelblue' : colorScale(getVal(d)) // Use this only when you are using dynamic colour for countries.
+				
+				/* 
+				
+				d === hoverD ? 'steelblue' : colorScale(getVal(d))  
+				
+				Use this for static colour and replace 'colorScale(getVal(d))' with the colour code you are using in 'polygonCapColor' function above.
+																																								
+				*/
             )
         )
-        .polygonsTransitionDuration(200);
+        .polygonsTransitionDuration(200); 
     world.controls().autoRotate = true; // Manage autoRotate property of Globe.
-    world.controls().autoRotateSpeed = 0.55;
+    world.controls().autoRotateSpeed = 0.55; // Rotation speed
 
     getData();
 }
@@ -123,8 +147,11 @@ function updatePolygonsData() {
         }
     }
 
+	// Comment below 2 lines if you don't want to keep the colour of the countries dynamic.
     const maxVal = Math.max(...featureCollection.map(getVal));
     colorScale.domain([0, maxVal]);
+	
+	
     world.polygonsData(featureCollection); // Updating data
 }
 
