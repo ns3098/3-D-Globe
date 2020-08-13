@@ -75,5 +75,8 @@ export const BIODATA_API =
 - **onPolygonHover** is triggered when Globe is hovered.
 - Check the file for more clarity and better understanding.
 
-
+# Changing Background images
+ - To change the background image of globe, navigate to src folder and open constant.js file and replace the value of the variable **BACKGROUND_IMAGE_URL** with the url of you image. It might happen that image you just used will not be rendered by the globe, in such case try another image.
+ - Colour of the globe is also managed inside constant.js file with the help of **GLOBE_IMAGE_URL** variable. Repeat the same steps as above mentioned.
+ - For other changes like changing the colour of countries, colour of the border between the two countries, Side colour of the countries, hover colour of the countries. Please check the **app.js** file and read the comments carefully.
 
